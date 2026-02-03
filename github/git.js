@@ -122,3 +122,47 @@ let arr2 = [...arr, 5, 6];
 let newPerson = { ...person, city: "Delhi" };
 
 
+// ==========================
+// GETTER & SETTER
+// ==========================
+
+class User {
+  constructor(name, age) {
+    this._name = name;   // underscore = internal variable
+    this._age = age;
+  }
+
+  // getter → used to READ value
+  get name() {
+    return this._name;
+  }
+
+  // setter → used to UPDATE value
+  set name(newName) {
+    this._name = newName;
+  }
+
+  get age() {
+    return this._age;
+  }
+
+  set age(newAge) {
+    if (newAge > 0) {
+      this._age = newAge;
+    }
+  }
+}
+
+// Creating object
+let u1 = new User("Sanskriti", 18);
+
+// Using getter (looks like property, not function)
+console.log(u1.name);   // Sanskriti
+console.log(u1.age);    // 18
+
+// Using setter
+u1.name = "Alex";
+u1.age = 20;
+
+console.log(u1.name);   // Alex
+console.log(u1.age);    // 20
